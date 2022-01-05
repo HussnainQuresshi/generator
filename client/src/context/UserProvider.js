@@ -49,7 +49,9 @@ export default function UserProvider(props){
           token
         }))
       })
-      .catch(err => handleAuthErr(err.response.data.errMsg))
+      .catch(err => handleAuthErr(err.response.data.errMsg)
+      )
+  //    return getUserListings()
   }
 
   function logout(){
@@ -95,7 +97,9 @@ export default function UserProvider(props){
           listings: [...prevState.listings, res.data]
         }))
       })
-      .catch(err => console.log(err.response.data.errMsg))
+      .catch(err => console.log(err.response.data.errMsg)
+      )
+      return getUserListings()
   }
 
   // delete listing
@@ -116,8 +120,12 @@ export default function UserProvider(props){
     .then(res => setUserState(prevState => ({
       ...prevState,
       listings: prevState.listings.map(listing => listing._id !== listingId? listing: res.data)
-    })))
+    }))
+    )
+    return getUserListings()
   }
+
+  
     
 
   return (

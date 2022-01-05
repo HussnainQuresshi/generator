@@ -26,6 +26,16 @@ export default function ListingForm(props){
     setInputs(initInputs)
   }
 
+//   function handleSubmit(e){
+//     e.preventDefault()
+//     props.submit(inputs, props._id)
+//     setInputs(initInputs)
+//     // console.log (inputs)
+//     if(props.setEditToggle) {
+//         props.setEditToggle(false)
+//     }
+// }
+
   const { sku, title, upc, description, imgUrl } = inputs
   return (
     <form onSubmit={handleSubmit}>
