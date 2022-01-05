@@ -14,13 +14,21 @@ export default function Listing(props){
       {
         !canEdit?
       <>
-      <h3>{sku}</h3>
-      <h1>{title}</h1>
-      <h3>{upc}</h3>
-      <h3>{ description }</h3>
-      <img src={imgUrl} alt="listing" width={75}/>
+      <table>
+      <tbody>
+      <td>{sku}</td>
+      <td>{title}</td>
+      <td>{upc}</td>
+      <td>{ description }</td>
+      <td><img src={imgUrl} alt="listing" width={50}/></td>
+      <td>
       <button onClick={()=>deleteListing(_id)}>Delete Listing</button>
+      </td>
+      <td>
       <button onClick={() => toggleCanEdit(prevState => !prevState)}>Edit Listing</button>
+      </td>
+      </tbody>
+      </table>
       </>
       :
       <>

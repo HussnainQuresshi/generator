@@ -15,10 +15,24 @@ export default function Profile(){
 
   return (
     <div className="profile">
-      <h1>Welcome @{username}!</h1>
-      <h3>Add A Listing</h3>
+      <h2>You are logged in as "{username}"</h2>
+      <h2>Use the form below to generate eBay listings</h2>
       <ListingForm addListing={addListing}/>
-      <h3>Your listing</h3>
+      {/* <table>
+            <thead>
+              <h5>eBay Inventory</h5>
+              <tr>
+                <th>Title</th>
+                <th>Condition</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Location</th>
+                <th>SKU</th>
+                <th>Categories</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+          </table> */}
       <ListingList listings={listings}/>
     </div>
   )
